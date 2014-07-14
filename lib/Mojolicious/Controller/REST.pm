@@ -1,3 +1,4 @@
+# ABSTRACT: Mojolicious Controller for RESTful operations
 package Mojolicious::Controller::REST;
 
 use Mojo::Base 'Mojolicious::Controller';
@@ -56,11 +57,98 @@ __END__
 
 =head1 NAME
 
-Mojolicious::Controller::REST
+Mojolicious::Controller::REST - Mojolicious Controller for RESTful operations
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+	# In Mojolicious Controller
+	use Mojo::Base 'Mojolicious::Controller::REST';
+	
+	$self->data( hello => 'world' )->message('Something went wrong');
+	
+	# renders json response as:
+	
+	{
+		"data":
+		{
+			"hello": "world"
+		},
+		"messages":
+		[
+			{
+				"severity": "warn",
+				"text": "Something went wrong"
+			}
+		]
+	}
+
+=head1 DESCRIPTION
+
+Mojolicious::Controller::REST helps with JSON rendering in RESTful applications. It follows 
+and ensures the output of the method in controller adheres to the following output format as JSON:
+
+	{
+		"data":
+		{
+			"<key1>": "<value1>",
+			"<key2>": "<value2>",
+			...
+		},
+		"messages":
+		[
+			{
+				"severity": "<warn|info>",
+				"text": "<message1>"
+			},
+			{
+				"severity": "<warn|info>",
+				"text": "<message2>"
+			},
+		]
+	}
+
+Mojolicious::Controller::REST extends Mojolicious::Controller and adds below methods
+
+=head1 METHODS
+
+=head2 data
+
+Sets the data element in 'data' array in JSON output. Returns controller object so that
+other method calls can be chained.
+
+=head2 message
+
+Sets an individual message in 'messages' array in JSON output. Returns controller object so that
+other method calls can be chained.
+
+A custom severity value can be used by calling message as:
+
+	$self->message('Something went wrong', 'fatal');
+
+	# renders json response as:
+	
+	{
+		"messages":
+		[
+			{
+				"text": "Something went wrong",
+				"severity": "fatal"
+			}
+		]
+	}
+
+=head2 message_info
+
+Similar to message_info, but with severity = 'info'. Returns controller object so that
+other method calls can be chained.
+
+=head2 status
+
+Set the status of response. Returns controller object so that other methods can be chained.
 
 =head1 AUTHOR
 

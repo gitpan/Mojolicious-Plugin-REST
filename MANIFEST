@@ -10,4 +10,10 @@ cpanfile
 dist.ini
 lib/Mojolicious/Controller/REST.pm
 lib/Mojolicious/Plugin/REST.pm
+t/01_basic.t
+t/02_associations.t
+t/lib/MyAssociations.pm
+t/lib/MyAssociations/Feature.pm
+t/lib/MyRest.pm
+t/lib/MyRest/Dog.pm
 weaver.ini

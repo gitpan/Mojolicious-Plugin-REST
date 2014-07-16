@@ -25,7 +25,7 @@ sub message {
 	my $self = shift;
 	my ( $message, $severity ) = @_;
 
-	$severity //= 'warn';
+	$severity //= 'info';
 
 	my $json = $self->stash('json');
 
@@ -40,7 +40,7 @@ sub message {
 	return $self;
 }
 
-sub message_info { $_[0]->message( $_[1], 'info' ) }
+sub message_warn { $_[0]->message( $_[1], 'warn' ) }
 
 sub status {
 	my $self   = shift;
@@ -61,7 +61,7 @@ Mojolicious::Controller::REST - Mojolicious Controller for RESTful operations
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -80,7 +80,7 @@ version 0.002
 		"messages":
 		[
 			{
-				"severity": "warn",
+				"severity": "info",
 				"text": "Something went wrong"
 			}
 		]
@@ -88,7 +88,7 @@ version 0.002
 
 =head1 DESCRIPTION
 
-Mojolicious::Controller::REST helps with JSON rendering in RESTful applications. It follows 
+Mojolicious::Controller::REST helps with JSON rendering in RESTful applications. It follows  
 and ensures the output of the method in controller adheres to the following output format as JSON:
 
 	{
@@ -141,9 +141,9 @@ A custom severity value can be used by calling message as:
 		]
 	}
 
-=head2 message_info
+=head2 message_warn
 
-Similar to message_info, but with severity = 'info'. Returns controller object so that
+Similar to message, but with severity = 'warn'. Returns controller object so that
 other method calls can be chained.
 
 =head2 status

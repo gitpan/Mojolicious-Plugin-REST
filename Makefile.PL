@@ -20,10 +20,10 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Mojolicious::Plugin::REST",
   "PREREQ_PM" => {
-    "Lingua::EN::Inflect" => 0,
-    "Mojolicious" => 0
+    "Lingua::EN::Inflect" => "1.895",
+    "Mojolicious" => "1.0"
   },
-  "VERSION" => "0.003",
+  "VERSION" => "0.004",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -31,8 +31,8 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Lingua::EN::Inflect" => 0,
-  "Mojolicious" => 0
+  "Lingua::EN::Inflect" => "1.895",
+  "Mojolicious" => "1.0"
 );
 
 

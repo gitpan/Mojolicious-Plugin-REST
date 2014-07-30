@@ -13,9 +13,12 @@ meta-spec:
   version: 1.4
 name: Mojolicious-Plugin-REST
 requires:
-  Lingua::EN::Inflect: 0
-  Mojolicious: 0
+  Lingua::EN::Inflect: 1.895
+  Mojolicious: 1.0
 resources:
   homepage: https://github.com/abhishekisnot/Mojolicious-Plugin-REST
   repository: https://github.com/abhishekisnot/Mojolicious-Plugin-REST.git
-version: 0.003
+version: 0.004
+x_contributors:
+  - 'Abhishek Shende <a.shende@contractor.verio.net>'
+  - 'Vincent HETRU <vincent.hetru@13pass.com>'

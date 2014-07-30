@@ -1,7 +1,7 @@
 package Mojolicious::Controller::REST;
 
 # ABSTRACT: Mojolicious Controller for RESTful operations
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 use Mojo::Base 'Mojolicious::Controller';
 
 sub data {
@@ -19,7 +19,6 @@ sub data {
 
     $self->stash( json => $json );
     return $self;
-
 }
 
 sub message {
@@ -62,17 +61,17 @@ Mojolicious::Controller::REST - Mojolicious Controller for RESTful operations
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
     # In Mojolicious Controller
     use Mojo::Base 'Mojolicious::Controller::REST';
-
+    
     $self->data( hello => 'world' )->message('Something went wrong');
-
+    
     # renders json response as:
-
+    
     {
         "data":
         {
@@ -89,7 +88,7 @@ version 0.005
 
 =head1 DESCRIPTION
 
-Mojolicious::Controller::REST helps with JSON rendering in RESTful applications. It follows
+Mojolicious::Controller::REST helps with JSON rendering in RESTful applications. It follows  
 and ensures the output of the method in controller adheres to the following output format as JSON:
 
     {
@@ -109,6 +108,7 @@ and ensures the output of the method in controller adheres to the following outp
                 "severity": "<warn|info>",
                 "text": "<message2>"
             },
+            ...
         ]
     }
 
@@ -131,7 +131,7 @@ A custom severity value can be used by calling message as:
     $self->message('Something went wrong', 'fatal');
 
     # renders json response as:
-
+    
     {
         "messages":
         [

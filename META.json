@@ -35,9 +35,8 @@
          "web" : "https://github.com/abhishekisnot/Mojolicious-Plugin-REST"
       }
    },
-   "version" : "0.004",
+   "version" : "0.005",
    "x_contributors" : [
-      "Abhishek Shende <a.shende@contractor.verio.net>",
       "Vincent HETRU <vincent.hetru@13pass.com>"
    ]
 }

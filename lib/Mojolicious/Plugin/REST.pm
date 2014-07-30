@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::REST;
 
 # ABSTRACT: Mojolicious Plugin for RESTful operations
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::Exception;
 use Lingua::EN::Inflect 1.895 qw/PL/;
@@ -150,7 +150,7 @@ Mojolicious::Plugin::REST - Mojolicious Plugin for RESTful operations
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -281,19 +281,9 @@ If present, given HTTP to CRUD mapping will be used to determine method names. D
 
 Abhishek Shende <abhishekisnot@gmail.com>
 
-=head1 CONTRIBUTORS
-
-=over 4
-
-=item *
-
-Abhishek Shende <a.shende@contractor.verio.net>
-
-=item *
+=head1 CONTRIBUTOR
 
 Vincent HETRU <vincent.hetru@13pass.com>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

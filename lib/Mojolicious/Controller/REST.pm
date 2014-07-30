@@ -1,7 +1,7 @@
 package Mojolicious::Controller::REST;
 
 # ABSTRACT: Mojolicious Controller for RESTful operations
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 use Mojo::Base 'Mojolicious::Controller';
 
 sub data {
@@ -62,7 +62,7 @@ Mojolicious::Controller::REST - Mojolicious Controller for RESTful operations
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
